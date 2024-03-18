@@ -29,6 +29,13 @@ struct ParallelExecutionPool {
             .wait_for_any_job_to_complete()
         }
 
+        mut debug_strings = StringBuilder::create();
+        for arg in args {
+            debug_strings.append(arg);
+            debug_strings.append(" ");
+        }
+        eprintln("Running: {}", debug_strings.to_string());
+
         let process = start_background_process(args)
         let id = .pid_index++
         .pids.set(id, process)

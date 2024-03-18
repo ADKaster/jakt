@@ -80,5 +80,7 @@ fn run_compiler(
         }
     }
 
+    eprintln("Compiler args: {}", compile_args)
+
     return compile_args
 }
